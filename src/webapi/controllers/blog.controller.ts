@@ -27,6 +27,7 @@ export class BlogController {
     getById = asyncHandler(
         async (req: Request, res: Response, next: NextFunction) => {
             const id = new Types.ObjectId(req.params.id);
+            console.log(id)
             let blog = await this._blogRepository.IncrementViews( id );
 
             if (!blog) {
@@ -94,7 +95,6 @@ export class BlogController {
 
             const blog = await this._blogRepository.GetById(id);
             if(!blog) throw new NotFoundError("Blog not found");
-            console.log(blog.author.toString(), user, blog.coAuthors.includes(user))
             if(blog.author.toString() !== user && !blog.coAuthors.includes(user))
                 throw new BadRequestError("User is not author or coauthor");
             
