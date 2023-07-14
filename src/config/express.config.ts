@@ -5,6 +5,7 @@ import { blogRoute } from "webapi/routes/blog.route";
 import * as cors from "cors";
 import { commentRoute } from "webapi/routes/comment.route";
 import { errorHandler } from "webapi/middlewares/error.handler.middleware";
+import * as swaggerUi from "swagger-ui-express";
 
 export class ExpressConfig {
   private app: Express;
@@ -22,6 +23,7 @@ export class ExpressConfig {
         {origin: '*'}
 
       ));
+
       this.app.use("/api/v1/auth", userRoute);
       this.app.use("/api/v1/blogs", blogRoute);
       this.app.use("/api/v1/comments", commentRoute)

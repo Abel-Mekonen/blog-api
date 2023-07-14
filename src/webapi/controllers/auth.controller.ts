@@ -40,7 +40,4 @@ export class AuthController {
     }
   )
 
-  update = async (req: Request, res: Response, next: NextFunction) => {
-    throw new Error("Method not implemented.");
-  };
 }
