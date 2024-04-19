@@ -23,7 +23,7 @@ To get started with the blog API, follow these steps:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/blog-api.git
+   git clone https://github.com/Abel-Mekonen/blog-api.git
 
 2. **Install dependencies:**
 
